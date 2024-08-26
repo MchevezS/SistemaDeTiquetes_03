@@ -1,3 +1,46 @@
 {
-  "users": []
+  "users": [
+    {
+      "id": "7927",
+      "nombre": "Michelle chevez",
+      "email": "michelle1234@gmail.com",
+      "clave": "1515",
+      "codigo": "15151"
+    },
+    {
+      "id": "ed07",
+      "nombre": "Michelle chevez",
+      "email": "marco@gmail.com",
+      "clave": "1515",
+      "codigo": "15151"
+    },
+    {
+      "id": "4574",
+      "nombre": "mooha",
+      "email": "moha@gmail.com",
+      "clave": "2020",
+      "codigo": "15"
+    },
+    {
+      "id": "5042",
+      "nombre": "mooha",
+      "email": "mohatre@gmail.com",
+      "clave": "2020",
+      "codigo": "15120"
+    },
+    {
+      "id": "2b77",
+      "nombre": "rdeeqweqws",
+      "email": "2wfcwqdvcwe",
+      "clave": "qswqsd",
+      "codigo": "wsWDS2"
+    },
+    {
+      "id": "2052",
+      "nombre": "wqsdwew",
+      "email": "wqdscew",
+      "clave": "wesf",
+      "codigo": "15"
+    }
+  ]
 }

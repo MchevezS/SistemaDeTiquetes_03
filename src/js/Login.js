@@ -1,4 +1,5 @@
 import { getUsers } from "../Services/Servidores";
+import { postUsers } from "../Services/Servidores";
 
 let btnRedireccionar = document.getElementById('btnRedireccionar');
 let btnInicio = document.getElementById('btnIncio')
@@ -9,6 +10,7 @@ async function validarLogin(e) {
     let codigoLogin = document.getElementById('codigoLogin').value;
     let emailLogin = document.getElementById('emailLogin').value;
     let claveLogin = document.getElementById('claveLogin').value;
+    let tipoUsuario = document.getElementById('tipoUsuario').value;
 
     // Validar que los campos no estén vacíos
     if (emailLogin.trim() === "" || claveLogin.trim() === "" || codigoLogin.trim()=== "") {
@@ -16,9 +18,12 @@ async function validarLogin(e) {
         return;
     }
 
-    // Verificar si el código es el correcto
-    if (codigoLogin !== "15") {
-        alert('El código es incorrecto');
+    // Validar el código con el tipo de usuario
+    if (tipoUsuario === 'estudiante' && codigo !== "15") {
+        alert('El código de estudiante es incorrecto');
+        return;
+    } else if (tipoUsuario === 'profesor' && codigo !== "20") {
+        alert('El código de profesor es incorrecto');
         return;
     }
 
