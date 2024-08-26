@@ -1,0 +1,45 @@
+/* wendy*/ 
+body {   
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #F4F4F4;
+}
+h2{
+    text-align: center;
+}
+.formulario {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.formulario label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+.formulario .NombreE,
+.formulario .Consulta,
+.formulario .Fecha{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.formulario .btnEnviar{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #45DA18;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+.formulario .btnEnviar:hover {
+    background-color: #1BC40C;
+}
