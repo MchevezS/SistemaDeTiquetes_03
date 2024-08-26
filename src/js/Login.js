@@ -1,5 +1,6 @@
-import { getUsers } from "../services/services";
+import { getUsers } from "../Services/Servidores";
 
+let btnRedireccionar = document.getElementById('btnRedireccionar');
 let btnInicio = document.getElementById('btnIncio')
 async function validarLogin(e) {
     e.preventDefault(); // Evitar el envío del formulario
@@ -12,6 +13,12 @@ async function validarLogin(e) {
     // Validar que los campos no estén vacíos
     if (emailLogin.trim() === "" || claveLogin.trim() === "" || codigoLogin.trim()=== "") {
         alert('Ingrese todos sus datos');
+        return;
+    }
+
+    // Verificar si el código es el correcto
+    if (codigoLogin !== "15") {
+        alert('El código es incorrecto');
         return;
     }
 
@@ -29,7 +36,7 @@ async function validarLogin(e) {
                 // Login exitoso
                 alert('Login exitoso');
                 // Redirigir al usuario o realizar alguna acción
-                window.location.href = "/"; // Ejemplo: redirigir al dashboard
+                // window.location.href = "/"; // Ejemplo: redirigir al dashboard
             } else {
                 // Clave incorrecta
                 alert('La clave es incorrecta');
@@ -45,4 +52,6 @@ async function validarLogin(e) {
 }
 
 btnInicio.addEventListener('click',validarLogin)
-
+// btnRedireccionar.addEventListener('click',
+//      window.location.href = "../Registro.html"
+//     )
