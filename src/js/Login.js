@@ -3,6 +3,7 @@ import { postUsers } from "../Services/Servidores";
 
 let btnRedireccionar = document.getElementById('btnRedireccionar');
 let btnInicio = document.getElementById('btnIncio')
+
 async function validarLogin(e) {
     e.preventDefault(); // Evitar el envío del formulario
     
@@ -56,7 +57,9 @@ async function validarLogin(e) {
     }
 }
 
-btnInicio.addEventListener('click',validarLogin)
-// btnRedireccionar.addEventListener('click',
-//      window.location.href = "../Registro.html"
-//     )
+btnInicio.addEventListener('click', function () {
+    validarLogin
+})
+btnRedireccionar.addEventListener('click',function() {
+    window.location.href= "./Registro.html"
+})

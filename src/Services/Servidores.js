@@ -1,7 +1,7 @@
 // Metodo post: Guarda los datos.
 async function postUsers(userData, usuarioNuevo) {
     try {
-        const response = await fetch("http://localhost:3001/users", {
+        const response = await fetch("http://localhost:3001"+ endpoint, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -9,7 +9,7 @@ async function postUsers(userData, usuarioNuevo) {
             body: JSON.stringify(userData, usuarioNuevo)
         });
         const data = await response.json()
-        console.log(data);
+        // console.log(data);
         return data
     } catch (error) {
         console.error('Error posting user:', error);
@@ -22,7 +22,7 @@ export{postUsers}
 //Metodo Get: Obtiene informacio
 async function getUsers(userData, usuarioExiste) {
     try {
-        const response = await fetch('http://localhost:3001/users', {
+        const response = await fetch('http://localhost:3001'+ endpoint, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'

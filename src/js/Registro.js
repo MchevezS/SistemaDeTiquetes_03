@@ -15,7 +15,7 @@ async function validarVacios(e) {
         alert('Ingresa todos tus datos');
         return;
     }
-
+    
     // Validar el código con el tipo de usuario
     if (tipoUsuario === 'estudiante' && codigo !== "15") {
         alert('El código de estudiante es incorrecto');
@@ -24,7 +24,7 @@ async function validarVacios(e) {
         alert('El código de profesor es incorrecto');
         return;
     }
-
+    
 
 // Crear el objeto del nuevo usuario
 let userData = {
@@ -33,17 +33,18 @@ let userData = {
     clave: clave,
     codigo: codigo
 };
-    try {
-       // Recupera la lista de usuarios existentes
-       let usuarios = await getUsers();  // getUsers() devuelve una lista de usuarios
-
-
-     //Verifica si ya existe un usuario con el mismo correo
+try {
+    // Recupera la lista de usuarios existentes
+    let usuarios = await getUsers();  // getUsers() devuelve una lista de usuarios
+    
+    
+    //Verifica si ya existe un usuario con el mismo correo
     let usuarioExistente = usuarios.find(user => user.email === email);
-
+    
     if (usuarioExistente) {
         if (usuarioExistente.nombre === nombre) {
             // Usuario ya registrado con el mismo correo y nombre
+            console.log("que esta pasando");
             alert('Ya existe un usuario con el mismo correo y nombre');
         } else {
             // Correo ya registrado pero con un nombre diferente
@@ -52,12 +53,21 @@ let userData = {
     } else {
         await postUsers(userData);
         alert('Usuario registrado exitosamente');
+        console.log("CHEQUEANDO");
+        
+        // window.location.href="./Login.html";
+        redirigirAlLogin();                                                                                                                        
     }
 } catch (error) {
     console.error('Error al procesar la solicitud:', error);
 }
 }
-    
-    
-    btnRegistrarse.addEventListener('click',validarVacios)
+function redirigirAlLogin() {
+    window.location.href = "./Login.html";
+}
+
+btnRegistrarse.addEventListener('click',function() {
+        validarVacios
+        
+})
 
