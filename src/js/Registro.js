@@ -66,8 +66,5 @@ function redirigirAlLogin() {
     window.location.href = "./Login.html";
 }
 
-btnRegistrarse.addEventListener('click',function() {
-        validarVacios
-        
-})
+btnRegistrarse.addEventListener('click',validarVacios)
 
