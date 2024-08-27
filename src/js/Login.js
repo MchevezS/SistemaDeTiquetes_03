@@ -58,7 +58,7 @@ async function validarLogin(e) {
 }
 
 btnInicio.addEventListener('click', function () {
-    validarLogin
+    validarLogin()
 }) 
 btnRedireccionar.addEventListener('click',function() {
     window.location.href= "./Registro.html"
