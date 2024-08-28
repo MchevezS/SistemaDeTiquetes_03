@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel src/pages/Login.html --open"
+    "start": "parcel src/pages/Consultas.html --open"
   },
   "keywords": [],
   "author": "",
