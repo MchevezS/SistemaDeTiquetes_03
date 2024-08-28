@@ -2,7 +2,7 @@
   "name": "vanilla-js",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "Consultas.js",
   "scripts": {
     "start": "parcel src/pages/Consultas.html --open"
   },

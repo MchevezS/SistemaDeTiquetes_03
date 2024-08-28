@@ -3,7 +3,7 @@ const consulta = document.getElementById("consulta");
 const fecha = document.getElementById("fecha");
 const BtnConsulta = document.getElementById("btnEnviar");
 const hora = document.getElementById('hora');
-const tipoDeConsultas = document.getElementById('tipoDeConsultas');
+const tipoDeConsultas = document.getElementById("tipoDeConsultas");
 
 let datosLocalStorage = JSON.parse(localStorage.getItem("consultas")) || [];
 function GuardarConsulta() {
