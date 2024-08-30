@@ -2,10 +2,11 @@
   "name": "vanilla-js",
   "version": "1.0.0",
   "description": "",
-  "main": "Consultas.js",
+  "main": "Login.js",
   "scripts": {
-    "start": "parcel src/pages/Consultas.html --open"
+    "start": "parcel src/pages/Login.html --open"
   },
+  
   "keywords": [],
   "author": "",
   "license": "ISC",

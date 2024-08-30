@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2';
+import { mostrarAlerta } from './SweetAlert';
 import { getUsers } from "../Services/Servidores";
 import { postUsers } from "../Services/Servidores";
 
@@ -12,16 +14,31 @@ async function validarVacios(e) {
     const tipoUsuario = document.getElementById('tipoUsuario').value;
 
     if (nombre.trim()==="" || email.trim()==="" || codigo.trim()==="" || clave.trim()==="") {
-        alert('Ingresa todos tus datos');
+        Swal.fire({
+            title: 'Error',
+            text: 'Por favor, completa todos los campos.',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        });
         return;
     }
     
     // Validar el código con el tipo de usuario
     if (tipoUsuario === 'estudiante' && codigo !== "15") {
-        alert('El código de estudiante es incorrecto');
+        Swal.fire({
+            title: 'Error',
+            text: 'Codigo de estudiante incorrecto.',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        });
         return;
     } else if (tipoUsuario === 'profesor' && codigo !== "20") {
-        alert('El código de profesor es incorrecto');
+        Swal.fire({
+            title: 'Error',
+            text: 'Codigo de profesor incorrecto.',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        });
         return;
     }
     
@@ -45,14 +62,29 @@ try {
         if (usuarioExistente.nombre === nombre) {
             // Usuario ya registrado con el mismo correo y nombre
             console.log("que esta pasando");
-            alert('Ya existe un usuario con el mismo correo y nombre');
+            Swal.fire({
+                title: 'Error',
+                text: 'Ya existe un usuario con el mismo correo y nombre.',
+                icon: 'error',
+                confirmButtonText: 'OK'
+            });
         } else {
             // Correo ya registrado pero con un nombre diferente
-            alert('El correo electrónico ya está en uso. Por favor, usa un correo diferente.');
+            Swal.fire({
+                title: 'Error',
+                text: 'El correo electrónico ya está en uso. Por favor, usa un correo diferente.',
+                icon: 'error',
+                confirmButtonText: 'OK'
+            });
         }
     } else {
         await postUsers(userData);
-        alert('Usuario registrado exitosamente');
+        Swal.fire({
+            title: 'Error',
+            text: 'Usuario registrado exitosamente.',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        });
         console.log("CHEQUEANDO");
         
         // window.location.href="./Login.html";

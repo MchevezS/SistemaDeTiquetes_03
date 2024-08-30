@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2';
+import { mostrarAlerta } from './SweetAlert';
 import { getUsers } from "../Services/Servidores";
 import { postUsers } from "../Services/Servidores";
 
@@ -15,17 +17,32 @@ async function validarLogin() {
 
     // Validar que los campos no estén vacíos
     if (emailLogin.trim() === "" || claveLogin.trim() === "" || codigoLogin.trim()=== "") {
-        alert('Ingrese todos sus datos');
+        Swal.fire({
+            title: 'Error',
+            text: 'Por favor, completa todos los campos.',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        });
         return;
     }
     
     // Validar el código con el tipo de usuario
     if (tipoUsuario === 'estudiante' && codigoLogin !== "15") {
         console.log(codigoLogin);
-        alert('El código de estudiante es incorrecto');
+        Swal.fire({
+            title: 'Error',
+            text: 'Por favor, Ingresa correctamente tu codigo de Estudiante',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        });
         return;
     } else if (tipoUsuario === 'profesor' && codigoLogin !== "20") {
-        alert('El código de profesor es incorrecto');
+        Swal.fire({
+            title: 'Error',
+            text: 'Por favor, Ingresa correctamente tu codigo de Profesor.',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        });
         return;
     }
 
@@ -41,20 +58,40 @@ async function validarLogin() {
             // Verificar la clave del usuario
             if (usuario.clave === claveLogin) {
                 // Login exitoso
-                alert('Login exitoso');
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Login Exitoso.',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
                 // Redirige al usuario 
                 window.location.href = "./Consultas.html"; 
             } else {
                 // Clave incorrecta
-                alert('La clave es incorrecta');
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Clave incorrecta.',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
             }
         } else {
             // Usuario no encontrado
-            alert('No se encontró un usuario con ese correo electrónico');
+            Swal.fire({
+                title: 'Error',
+                text: 'No se ha encontrado un Usuario con ese Correo electronico.',
+                icon: 'error',
+                confirmButtonText: 'OK'
+            });
         }
     } catch (error) {
         console.error('Error al procesar la solicitud:', error);
-        alert('Ocurrió un error al procesar tu solicitud. Inténtalo de nuevo más tarde.');
+        Swal.fire({
+            title: 'Error',
+            text: 'Ocurrió un error al procesar tu solicitud. Inténtalo de nuevo más tarde.',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        });
     }
 }
 

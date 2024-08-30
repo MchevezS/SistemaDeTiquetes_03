@@ -34,6 +34,13 @@
       "email": "doggy@gmail.com",
       "clave": "1010",
       "codigo": "15"
+    },
+    {
+      "id": "e226",
+      "nombre": "Michelle",
+      "email": "michelle6060@gmail.com",
+      "clave": "1515",
+      "codigo": "15"
     }
   ]
 }

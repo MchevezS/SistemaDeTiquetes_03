@@ -1,4 +1,4 @@
-import { obtenerConsultas, eliminarConsulta } from './utils.js';
+import { obtenerConsultas, eliminarConsulta } from './guardarConsultas';
 
 document.addEventListener('DOMContentLoaded', () => {
     const tablaConsultas = document.getElementById('tablaConsultas');
