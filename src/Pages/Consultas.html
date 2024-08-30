@@ -12,14 +12,15 @@
         <label >Nombre del Estudiante</label>
         <input type="text" id="NombreE" class="NombreE">
 
-    <label id="tipoDeConsultas">Tipo de Consulta</label>
-    <select id="tipoConsulta">
-     <option value="ausencias">Justificación de ausencias</option>
-     <option value="tardias">Justificación de Tardías</option>
-     <option value="informeAusenciaTardia">Informe de Ausencia y de Tardías</option>
-     <option value="inconformidades">Inconformidades</option>
-     <option value="notaProyectoTarea">Nota de Proyecto o Tareas</option>
-     <option value="salidaClase">Permiso de salida</option>
+    <label>Tipo de Consulta</label>
+    <select id="tipoDeConsulta">
+     <option value="seleccione">Seleccione una opción</option>
+     <option id="ausencia" value="ausencias">Justificación de ausencias</option>
+     <option id="tardia" value="tardias">Justificación de Tardías</option>
+     <option id="informe" value="informeAusenciaTardia">Informe de Ausencia y de Tardías</option>
+     <option id="inconformidades" value="inconformidades">Inconformidades</option>
+     <option id="notaProyecto" value="notaProyectoTarea">Nota de Proyecto o Tareas</option>
+     <option id="permisoSalida" value="salidaClase">Permiso de salida</option>
     </select>
 
         <label for="consulta" >Detalle de la Consulta:</label>
@@ -32,6 +33,9 @@
         <input type="submit" class="btnEnviar" id="btnEnviar" value="Enviar consulta">
     </form>
 
+    <div>
+        <ul id="listaConsulta"></ul> <!-- Las consultas se agregan a este contenedor-->
+    </div>
 
 
 <script type="module" src="/src/js/ConsultasLocal.js"></script>

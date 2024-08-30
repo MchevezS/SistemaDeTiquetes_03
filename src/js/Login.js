@@ -4,8 +4,8 @@ import { postUsers } from "../Services/Servidores";
 let btnRedireccionar = document.getElementById('btnRedireccionar');
 let btnInicio = document.getElementById('btnIncio')
 
-async function validarLogin(e) {
-    e.preventDefault(); // Evitar el envío del formulario
+async function validarLogin() {
+     
     
     // Obtener los valores de los campos de entrada
     let codigoLogin = document.getElementById('codigoLogin').value;
@@ -18,12 +18,13 @@ async function validarLogin(e) {
         alert('Ingrese todos sus datos');
         return;
     }
-
+    
     // Validar el código con el tipo de usuario
-    if (tipoUsuario === 'estudiante' && codigo !== "15") {
+    if (tipoUsuario === 'estudiante' && codigoLogin !== "15") {
+        console.log(codigoLogin);
         alert('El código de estudiante es incorrecto');
         return;
-    } else if (tipoUsuario === 'profesor' && codigo !== "20") {
+    } else if (tipoUsuario === 'profesor' && codigoLogin !== "20") {
         alert('El código de profesor es incorrecto');
         return;
     }
@@ -41,8 +42,8 @@ async function validarLogin(e) {
             if (usuario.clave === claveLogin) {
                 // Login exitoso
                 alert('Login exitoso');
-                // Redirigir al usuario o realizar alguna acción
-                // window.location.href = "/"; // Ejemplo: redirigir al dashboard
+                // Redirige al usuario 
+                window.location.href = "./Consultas.html"; 
             } else {
                 // Clave incorrecta
                 alert('La clave es incorrecta');
@@ -57,9 +58,9 @@ async function validarLogin(e) {
     }
 }
 
-btnInicio.addEventListener('click', function () {
+btnInicio.addEventListener('click',function () {
     validarLogin()
-}) 
+});
 btnRedireccionar.addEventListener('click',function() {
     window.location.href= "./Registro.html"
 })

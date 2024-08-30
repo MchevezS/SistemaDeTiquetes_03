@@ -1,45 +1,132 @@
-/* wendy*/ 
-body {   
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: #F4F4F4;
-}
-h2{
+/* Estilos para el título */
+h2 {
     text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
 }
+
+/* Estilos generales para el formulario */
 .formulario {
-    max-width: 400px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    font-family: 'Arial', sans-serif;
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
 }
+
+/* Estilos para las etiquetas */
 .formulario label {
     display: block;
-    margin-bottom: 8px;
+    margin: 10px 0 5px;
     font-weight: bold;
+    color: #333;
 }
-.formulario .NombreE,
-.formulario .Consulta,
-.formulario .Fecha{
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-.formulario .btnEnviar{
+
+/* Estilos para los campos de entrada de texto */
+.formulario input[type="text"],
+.formulario input[type="date"],
+.formulario input[type="time"],
+.formulario select {
     width: 100%;
     padding: 10px;
-    border: none;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
     border-radius: 4px;
-    background-color: #45DA18;
-    color: #fff;
     font-size: 16px;
-    cursor: pointer;
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
 }
+
+/* Estilos para el campo de texto de la consulta */
+.formulario input.Consulta {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Estilos para el botón de enviar */
+.formulario .btnEnviar {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
 .formulario .btnEnviar:hover {
-    background-color: #1BC40C;
+    background-color: #2980b9;
+}
+
+/* Estilos para la lista de consultas */
+#listaConsulta {
+    list-style-type: none;
+    padding: 0;
+}
+
+#listaConsulta li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 5px;
+}
+
+#listaConsulta li:last-child {
+    border-bottom: none;
+}
+
+/*Estilo para los elementos de la lista */
+#listaConsulta li {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Media queries para hacer el formulario responsivo */
+@media (max-width: 768px) {
+    /* Ajustes para pantallas medianas */
+    .formulario {
+        padding: 15px;
+    }
+
+    .formulario input[type="text"],
+    .formulario input[type="date"],
+    .formulario input[type="time"],
+    .formulario select {
+        font-size: 14px;
+    }
+
+    .formulario .btnEnviar {
+        font-size: 14px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajustes para pantallas pequeñas */
+    .formulario {
+        padding: 10px;
+    }
+
+    .formulario input[type="text"],
+    .formulario input[type="date"],
+    .formulario input[type="time"],
+    .formulario select {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .formulario .btnEnviar {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    /*Alineación en columnas para pantallas muy pequeñas */
+    .formulario input.Consulta {
+        height: 80px;
+    }
 }
