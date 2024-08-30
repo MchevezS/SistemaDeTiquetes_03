@@ -1,63 +1,58 @@
-const nombreE = document.getElementById("NombreE");
-const consulta = document.getElementById("consulta");
-const fecha = document.getElementById("fecha");
-const hora = document.getElementById('hora');
-const tipoDeConsulta = document.getElementById("tipoDeConsulta"); // ID correcto para el campo tipo de consulta
-const BtnConsulta = document.getElementById("btnEnviar");
-const listaConsulta = document.getElementById('listaConsulta');
+import Swal from 'sweetalert2';
+import { mostrarAlerta } from './SweetAlert';
+import { guardarConsulta } from './guardarConsultas';
+import { obtenerConsultas } from './guardarConsultas';
 
-// Obtener datos del localStorage o inicializar un array vacío
-let datosLocalStorage = JSON.parse(localStorage.getItem("consultas")) || [];
+document.addEventListener('DOMContentLoaded', () => {
+    const formulario = document.querySelector('.formulario');
 
-// Función para guardar una consulta
-function GuardarConsulta() {
-    // Crear el objeto con todos los datos, incluyendo el tipo de consulta
-    let Datosconsulta = {
-        nombre: nombreE.value,
-        consulta: consulta.value,
-        fecha: fecha.value,
-        hora: hora.value,
-        tipo: tipoDeConsulta.value // Agregar el tipo de consulta
-    };
+    formulario.addEventListener('submit', (event) => {
+        event.preventDefault(); // Evita que el formulario se envíe de la manera tradicional
+        
+        // Obtiene los valores del formulario
+        const nombreE = document.getElementById('NombreE').value.trim();
+        const tipoDeConsulta = document.getElementById('tipoDeConsulta').value.trim();
+        const consulta = document.getElementById('consulta').value.trim();
+        const fecha = document.getElementById('fecha').value.trim();
+        const hora = document.getElementById('hora').value.trim();
 
-    // Agregar la consulta al array y al localStorage
-    datosLocalStorage.push(Datosconsulta);
-    localStorage.setItem("consultas", JSON.stringify(datosLocalStorage));
+        // Verifica si algún campo requerido está vacío
+        if (!nombreE || tipoDeConsulta === 'seleccione' || !consulta || !fecha || !hora) {
+            Swal.fire({
+                title: 'Error',
+                text: 'Por favor, completa todos los campos antes de enviar.',
+                icon: 'error',
+                confirmButtonText: 'OK'
+            });
+            return; // Detiene el envío del formulario si hay campos vacíos
+        }
 
-    // Limpiar los campos
-    nombreE.value = "";
-    consulta.value = "";
-    fecha.value = "";
-    hora.value = "";
-    tipoDeConsulta.value = "seleccione"; // Limpiar el campo tipo de consulta
+        // Crea un objeto con los datos
+        const consultaData = {
+            nombreE,
+            tipoDeConsulta,
+            consulta,
+            fecha,
+            hora
+        };
 
-    // Actualizar la lista de consultas en la interfaz
-    RenderizaConsultas();
-}
+        // Guarda la consulta en localStorage
+        guardarConsulta(consultaData);
 
-// Función para renderizar las consultas en la interfaz
-function RenderizaConsultas() {
-    // Limpiar la lista actual
-    listaConsulta.innerHTML = "";
+        // Muestra un mensaje de confirmación
+        Swal.fire({
+            title: 'Consulta Enviada',
+            text: 'Tu consulta ha sido guardada exitosamente.',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        });
 
-    // Renderizar cada consulta en la lista
-    datosLocalStorage.forEach((consulta) => {
-        let lista = document.createElement('li');
-        lista.textContent = `${consulta.nombre} - ${consulta.consulta} - ${consulta.fecha} - ${consulta.hora} - Tipo: ${consulta.tipo}`;
-        listaConsulta.appendChild(lista);
+        // Limpia el formulario
+        formulario.reset();
     });
-}
 
-// Inicializar la lista de consultas al cargar la página
-RenderizaConsultas();
-
-// Evento al hacer clic en el botón de enviar
-BtnConsulta.addEventListener("click", function(e) {
-    e.preventDefault();
-    if (nombreE.value === "" || consulta.value === "" || fecha.value === "" || hora.value === "" || tipoDeConsulta.value === "seleccione") {
-        alert("Por favor llenar todos los campos");
-    } else {
-        alert("Consulta enviada exitosamente");
-        GuardarConsulta();
-    }
+    // Redirige a la página de historial cuando se hace clic en el botón
+    btnHistorial.addEventListener('click', () => {
+        window.location.href = './TablaConsultas.html'; 
+    });
 });

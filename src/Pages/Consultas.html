@@ -23,7 +23,7 @@
      <option id="permisoSalida" value="salidaClase">Permiso de salida</option>
     </select>
 
-        <label for="consulta" >Detalle de la Consulta:</label>
+        <label >Detalle de la Consulta:</label>
         <input type="text" id="consulta" class="Consulta" placeholder="Escribe tu consulta aquí...">
         
         <label >Fecha:</label>
@@ -31,6 +31,7 @@
 
         <input type="time" class="hora" id="hora">
         <input type="submit" class="btnEnviar" id="btnEnviar" value="Enviar consulta">
+        <button class="btnHistorial" id="btnHistorial">Ver Historial de Consultas</button>
     </form>
 
     <div>
@@ -39,5 +40,6 @@
 
 
 <script type="module" src="/src/js/ConsultasLocal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
