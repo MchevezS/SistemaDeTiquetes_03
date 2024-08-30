@@ -1,0 +1,73 @@
+/* Contenedor principal para el formulario */
+.infoInputs {
+    max-width: 400px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centrar horizontalmente */
+    padding: 20px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde del formulario */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Color de fondo del formulario */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Estilo para los labels */
+.infoInputs label {
+    display: block; /* Hacer que el label ocupe toda la línea */
+    margin-bottom: 5px; /* Espacio debajo del label */
+    font-weight: bold; /* Negrita para los labels */
+    color: #333; /* Color del texto del label */
+}
+
+/* Estilo para los inputs de texto */
+.infoInputs input[type="text"],
+.infoInputs input[type="password"],
+.infoInputs select {
+    width: 100%; /* Ancho completo del contenedor padre */
+    padding: 8px; /* Espaciado interno */
+    margin-bottom: 15px; /* Espacio debajo de los campos */
+    border: 1px solid #ddd; /* Borde de los campos */
+    border-radius: 4px; /* Bordes redondeados para los campos */
+    box-sizing: border-box; /* Incluir padding y border en el ancho total */
+}
+
+/* Estilo para el botón de inicio de sesión */
+.infoInputs .btnIncio {
+    width: 100%; /* Ancho completo del contenedor padre */
+    padding: 10px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    background-color: #007bff; /* Color de fondo */
+    color: white; /* Color del texto */
+    font-size: 16px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+}
+
+.infoInputs .btnIncio:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el ratón */
+}
+
+/* Estilo para el botón de redirección */
+.infoInputs #btnRedireccionar {
+    display: block; /* Hacer que el botón ocupe toda la línea */
+    width: 100%; /* Ancho completo del contenedor padre */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #007bff; /* Borde del botón */
+    border-radius: 4px; /* Bordes redondeados */
+    background-color: white; /* Color de fondo blanco */
+    color: #007bff; /* Color del texto */
+    font-size: 16px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+    text-align: center; /* Centrar el texto */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+    text-decoration: none; /* Sin subrayado en el texto del botón */
+}
+
+.infoInputs #btnRedireccionar:hover {
+    background-color: #f1f1f1; /* Color de fondo al pasar el ratón */
+    color: #0056b3; /* Color del texto al pasar el ratón */
+}
+
+/* Estilo adicional para los divs internos */
+.infoInputs > div {
+    margin-bottom: 15px; /* Espacio debajo de cada div interno */
+}

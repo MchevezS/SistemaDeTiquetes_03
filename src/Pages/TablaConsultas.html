@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadistica de Consultas</title>
+    <link rel="stylesheet" href="/src/css/TablaConsultas.css">
+</head>
+<body>
+    <h2 class="titulo">Estadísticas Diarias de Consultas</h2>
+    <table>
+        <thead >
+            <tr class="cuadritoTabla">
+                <th id="acciones" class="acciones">Acciones</th>
+                <th id="nombre" class="nombre">Nombre del Estudiante</th>
+                <th id="fecha" class="fecha">Fecha</th>
+                <th id="hora" class="hora">Hora</th>
+                <th id="consulta" class="consulta">Detalle de la Consulta</th>
+            </tr>
+        </thead>
+        <tbody class="tablaConsultas" id="tablaConsultas">
+            <!-- Las filas se llenarán con JavaScript -->
+        </tbody>
+    </table>
+    
+<script type="module" src="/src/js/TablaEstadisticasConsulta.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>

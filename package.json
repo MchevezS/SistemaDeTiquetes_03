@@ -4,12 +4,17 @@
   "description": "",
   "main": "Login.js",
   "scripts": {
-    "start": "parcel src/Pages/Login.html --open"
+    "start": "parcel src/pages/Login.html --open"
   },
+  
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "parcel": "^2.8.3"
+  },
+  "dependencies": {
+    "json-server": "^1.0.0-beta.2",
+    "sweetalert2": "^11.12.4"
   }
 }

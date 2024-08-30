@@ -1,0 +1,85 @@
+/* Estilo para el título */
+.titulo {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Estilo para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para el encabezado de la tabla */
+thead {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+/* Estilo para las celdas del encabezado */
+th {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 2px solid #0056b3;
+    font-weight: normal;
+}
+
+/* Estilo para las filas del cuerpo de la tabla */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+/* Estilo para las celdas de la tabla */
+td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Estilo para la tabla con bordes */
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+table {
+    border-spacing: 0;
+}
+
+/* Efecto hover en las filas de la tabla */
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Estilo para los encabezados de columnas específicos */
+.cuadritoTabla th {
+    text-align: center;
+}
+
+.cuadritoTabla th#acciones {
+    width: 100px; /* Ajusta el tamaño según tu necesidad */
+}
+
+.cuadritoTabla th#nombre {
+    width: 200px; /* Ajusta el tamaño según tu necesidad */
+}
+
+.cuadritoTabla th#fecha,
+.cuadritoTabla th#hora {
+    width: 120px; /* Ajusta el tamaño según tu necesidad */
+}
+
+.cuadritoTabla th#consulta {
+    width: 300px; /* Ajusta el tamaño según tu necesidad */
+}

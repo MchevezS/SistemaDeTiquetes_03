@@ -4,9 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de Sesion</title>
+    <link rel="stylesheet" href="/src/css/Login.css">
 </head>
 <body>
-    
-    
+  <div class="infoInputs">
+    <div>
+        <label for="emailLogin">Email</label>
+        <input type="text" class="emailLogin" id="emailLogin">
+    </div>
+    <label>Tipo de Usuario:</label>
+    <select id="tipoUsuario">
+        <option value="estudiante">Estudiante</option>
+        <option value="profesor">profesor</option>
+    </select>
+    <div> 
+        <label for="codigoLogin">Código</label>
+        <input type="text" class="codigoLogin" id="codigoLogin">
+    </div>
+    <div>
+        <label for="claveLogin">Password</label>
+        <input type="password" class="claveLogin" id="claveLogin">
+    </div>
+    <div>
+        <button class="btnIncio" id="btnIncio">Iniciar sesion </button>
+   </div>
+   <button id="btnRedireccionar">Registrarse Aquí</button>
+</div>   
+
+<script type="module" src="/src/js/Login.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>   
 </body>
 </html>

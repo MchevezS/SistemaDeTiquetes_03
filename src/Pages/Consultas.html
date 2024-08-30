@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultas</title>
+    <link rel="stylesheet" href="/src/css/Consultas.css">
+</head>
+<body>
+    <h2>Haz tu consulta aqui 👇🏻!</h2>
+    <form class="formulario">
+        <label >Nombre del Estudiante</label>
+        <input type="text" id="NombreE" class="NombreE">
+
+    <label>Tipo de Consulta</label>
+    <select id="tipoDeConsulta">
+     <option value="seleccione">Seleccione una opción</option>
+     <option id="ausencia" value="ausencias">Justificación de ausencias</option>
+     <option id="tardia" value="tardias">Justificación de Tardías</option>
+     <option id="informe" value="informeAusenciaTardia">Informe de Ausencia y de Tardías</option>
+     <option id="inconformidades" value="inconformidades">Inconformidades</option>
+     <option id="notaProyecto" value="notaProyectoTarea">Nota de Proyecto o Tareas</option>
+     <option id="permisoSalida" value="salidaClase">Permiso de salida</option>
+    </select>
+
+        <label >Detalle de la Consulta:</label>
+        <input type="text" id="consulta" class="Consulta" placeholder="Escribe tu consulta aquí...">
+        
+        <label >Fecha:</label>
+        <input type="date"  class="Fecha"  id="fecha" >
+
+        <input type="time" class="hora" id="hora">
+        <input type="submit" class="btnEnviar" id="btnEnviar" value="Enviar consulta">
+        <button class="btnHistorial" id="btnHistorial">Ver Historial de Consultas</button>
+    </form>
+
+    <div>
+        <ul id="listaConsulta"></ul> <!-- Las consultas se agregan a este contenedor-->
+    </div>
+
+
+<script type="module" src="/src/js/ConsultasLocal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
